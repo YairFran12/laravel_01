@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +11,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('/principal', 'crudController');
+
 
 Route::get('/', function () {
     return view('welcome');
