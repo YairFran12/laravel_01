@@ -14,7 +14,7 @@ class crudController extends Controller
      */
     public function index()
     {
-        $emps = datosModel::paginate(4);
+        $emps = datosModel::all();
 
         return view('vistaP')->with('emps', $emps);
     }
@@ -90,8 +90,25 @@ class crudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required',
+            'apellidoP' => 'required',
+            'apellidoM' => 'required',
+            'usuario' => 'required',
+
+        ]);
+        $emps = datosModel::find($id);
+
+        $emps->nombre = $request->input('nombre');
+        $emps->apellidoP = $request->input('apellidoP');
+        $emps->apellidoM = $request->input('apellidoM');
+        $emps->usuario = $request->input('usuario');
+
+        $emps->save();
+
+        return redirect('/principal')->with('success', 'Usuario Actualizado');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -101,6 +118,9 @@ class crudController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $emps = datosModel::find($id);
+        $emps->delete();
+
+        return redirect('/principal')->with('success', 'Usuario Eliminado');
     }
 }
