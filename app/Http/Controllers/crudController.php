@@ -14,7 +14,8 @@ class crudController extends Controller
      */
     public function index()
     {
-        $emps = datosModel::all();
+        $emps = datosModel::where('valor', '1')->get();
+
 
         return view('vistaP')->with('emps', $emps);
     }
@@ -108,7 +109,6 @@ class crudController extends Controller
 
         return redirect('/principal')->with('success', 'Usuario Actualizado');
     }
-
 
     /**
      * Remove the specified resource from storage.

@@ -26,14 +26,14 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-      <form action="{{ action('crudController@store') }}" method="POST">
+      <form action="{{ action('crudController@store') }}" method="POST" >
 
           {{ csrf_field() }}
           <div class="modal-body">
 
                <div class="form-group">
                    <label> Nombre </label>
-                   <input type="text" name ="nombre" class="form-control"  placeholder="Ingresa el nombre(s)">
+                   <input type="text" name ="nombre" class="form-control"  placeholder="Ingresa el nombre(s)" >
                </div>
 
                <div class="form-group">
@@ -48,7 +48,7 @@
 
               <div class="form-group">
                           <label> Usuario </label>
-                          <input type="text" name ="usuario" class="form-control"  placeholder="Ingresa nombre de Usuario">
+                          <input type="text" name ="usuario" class="form-control" placeholder="Ingresa nombre de Usuario">
               </div>
 
               <div class="form-group">
@@ -102,7 +102,7 @@
   
                  <div class="form-group">
                         <label> Apellido Paterno </label>
-                        <input type="text" name ="apellidoP" id ="apellidoP" class="form-control"  placeholder="Ingresa apellido paterno">
+                        <input type="text" name ="apellidoP" id ="apellidoP" class="form-control"  placeholder="Ingresa apellido paterno" >
                 </div>
   
                 <div class="form-group">
@@ -220,6 +220,8 @@
                     <td>
                             <a href="#" class="btn btn-info edit" > <i class="fas fa-edit"> </i></a>
                             <a href="#" class="btn btn-danger delete" ><i class="fas fa-trash"></i></a>
+                            <a href="#" class="btn btn-warning" ><i class="fas fa-eye-slash"></i></a>
+                            
                             </td>
                   </tr>
                     @endforeach
@@ -305,6 +307,9 @@
 
 
     });
+
+    
+
 
     });
      
