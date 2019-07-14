@@ -21,6 +21,7 @@ class CreateDatosTable extends Migration
             $table->string('usuario');
             $table->string('pass');
             $table->date('fechaReg');
+            $table->integer('valor')->default(1);
             $table->timestamps();
         });
     }
