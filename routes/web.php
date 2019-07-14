@@ -16,7 +16,6 @@ Route::resource('/principal', 'crudController');
 
 
 
-
 Route::get('/', function () {
     return view('welcome');
 });

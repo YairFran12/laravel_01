@@ -162,6 +162,8 @@
       {{--  Termina Modelo Eliminar --}}
 
 
+
+
         {{--  Inicio comprobar Errores --}}
 
     @if(count($errors) > 0)
@@ -307,8 +309,6 @@
 
 
     });
-
-    
 
 
     });
